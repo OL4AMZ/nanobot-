@@ -1,13 +1,13 @@
 {
   "providers": {
-    "gemini": {
-      "api_key": "${GEMINI_API_KEY}"
+    "google": {
+      "apiKey": "${GOOGLE_API_KEY}"
     }
   },
   "agents": {
     "defaults": {
       "model": "gemini/gemini-2.0-flash",
-      "provider": "gemini"
+      "provider": "google"
     }
   },
   "channels": {
