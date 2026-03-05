@@ -1,0 +1,20 @@
+{
+  "providers": {
+    "gemini": {
+      "api_key": "${GEMINI_API_KEY}"
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": "gemini/gemini-2.0-flash",
+      "provider": "gemini"
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "token": "${TELEGRAM_BOT_TOKEN}",
+      "allow_from": []
+    }
+  }
+}
