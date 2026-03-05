@@ -1,7 +1,16 @@
 #!/bin/sh
-# 用環境變數替換 config.json 裡的佔位符
+
+# Debug：印出環境變數是否有值
+echo ">>> GOOGLE_API_KEY=${GOOGLE_API_KEY}"
+echo ">>> TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}"
+
+# 替換佔位符
 sed -i "s|\${GOOGLE_API_KEY}|${GOOGLE_API_KEY}|g" /root/.nanobot/config.json
 sed -i "s|\${TELEGRAM_BOT_TOKEN}|${TELEGRAM_BOT_TOKEN}|g" /root/.nanobot/config.json
 
-# 啟動 nanobot gateway
+# Debug：印出替換後的 config
+echo ">>> config.json after replace:"
+cat /root/.nanobot/config.json
+
+# 啟動
 exec nanobot gateway
