@@ -42,7 +42,3 @@ RUN chmod +x /startup.sh
 EXPOSE 18790
 
 ENTRYPOINT ["/bin/sh", "/startup.sh"]
-# Gateway default port
-EXPOSE 18790
-
-ENTRYPOINT ["/startup.sh"]
