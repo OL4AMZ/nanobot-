@@ -32,11 +32,13 @@ WORKDIR /app
 
 # Create config directory
 RUN mkdir -p /root/.nanobot
-# 在 RUN mkdir -p /root/.nanobot 那行後面加
 COPY config.json /root/.nanobot/config.json
+
+# Copy startup script
+COPY startup.sh /startup.sh
+RUN chmod +x /startup.sh
 
 # Gateway default port
 EXPOSE 18790
 
-ENTRYPOINT ["nanobot"]
-CMD ["status"]
+ENTRYPOINT ["/startup.sh"]
